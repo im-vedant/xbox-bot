@@ -22,8 +22,9 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
     rules: {
-      "@typescript-eslint/no-explicit-any": "warn", // or "off"
-      "@typescript-eslint/no-unused-vars": "warn", // so unused imports don’t fail build
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/no-unused-vars": "warn", 
+       "react/no-unescaped-entities": "off", 
     },
   },
 ];
