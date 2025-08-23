@@ -35,7 +35,7 @@ let reactPrompt: any;
 
 async function getReactPrompt() {
   if (!reactPrompt) {
-    reactPrompt = await pull("hwchase17/react");
+    reactPrompt = await pull("hwchase17/react-chat");
   }
   return reactPrompt;
 }
@@ -61,7 +61,7 @@ async function createAgent() {
 
 export async function POST(request: NextRequest) {
   try {
-    const { message } = await request.json();
+    const { message, chatHistory = [] } = await request.json();
 
     if (!message) {
       return NextResponse.json(
@@ -88,12 +88,23 @@ export async function POST(request: NextRequest) {
     // Create the agent executor
     const agentExecutor = await createAgent();
 
+    // Format chat history for the ReAct prompt
+    const formattedHistory = chatHistory
+      .slice(-6) // Keep last 6 messages for context (3 exchanges)
+      .map((msg: ChatMessage) => {
+        return msg.isBot 
+          ? `Assistant: ${msg.text}`
+          : `Human: ${msg.text}`;
+      })
+      .join('\n');
+
     // Enhanced system prompt for Xbox gaming focus
     const enhancedMessage = `Xbox handheld gaming question: ${message}`;
 
-    // Execute the agent
+    // Execute the agent with chat history
     const result = await agentExecutor.invoke({
       input: enhancedMessage,
+      chat_history: formattedHistory,
     });
 
     // Extract the final response
@@ -146,7 +157,7 @@ export async function GET() {
     message: 'Xbox Handheld Gaming Console ReAct Agent API is running',
     status: 'healthy',
     model: 'GPT-4',
-    features: ['ReAct Agent', 'Tavily Search', 'Xbox Gaming Expertise'],
+    features: ['ReAct Agent', 'Chat History', 'Tavily Search', 'Xbox Gaming Expertise'],
     tools: ['TavilySearchResults'],
   });
 }

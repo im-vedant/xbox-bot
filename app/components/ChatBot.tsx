@@ -65,7 +65,7 @@ Ask me anything about Xbox handheld gaming!`,
     setIsLoading(true);
 
     try {
-      // Call the ReAct Agent API (no chat history needed)
+      // Call the ReAct Agent API with chat history
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
@@ -73,6 +73,7 @@ Ask me anything about Xbox handheld gaming!`,
         },
         body: JSON.stringify({
           message: currentInput,
+          chatHistory: messages, // Send previous messages as context
         }),
       });
 
