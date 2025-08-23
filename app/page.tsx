@@ -1,4 +1,4 @@
-import Image from "next/image";
+'use client'
 import ChatBot from "./components/ChatBot";
 
 export default function Home() {
@@ -126,20 +126,33 @@ export default function Home() {
             
             {/* Central demo area */}
             <div className="bg-white/10 rounded-xl p-4 sm:p-8 backdrop-blur-sm relative z-10">
-              <button className="bg-pink-400 text-white rounded-lg px-4 sm:px-6 py-2 sm:py-3 mb-4 sm:mb-6 flex items-center space-x-2 mx-auto text-sm sm:text-base">
-                <span>▶</span>
-                <span>Watch Video</span>
+              <button 
+                onClick={() => {
+                  // Trigger chatbot opening
+                  const chatBotButton = document.querySelector('[data-chatbot-trigger]') as HTMLButtonElement;
+                  if (chatBotButton) {
+                    chatBotButton.click();
+                  }
+                }}
+                className="bg-pink-400 hover:bg-pink-500 text-white rounded-lg px-4 sm:px-6 py-2 sm:py-3 mb-4 sm:mb-6 flex items-center space-x-2 mx-auto text-sm sm:text-base transition-colors"
+              >
+                <span>🤖</span>
+                <span>Activate Chat Bot</span>
               </button>
-              <div className="text-base sm:text-lg font-medium mb-4 sm:mb-6">Acme Copilot</div>
+              <div className="text-base sm:text-lg font-medium mb-4 sm:mb-6">Xbox Gaming Assistant</div>
               
               {/* Demo visualization */}
               <div className="bg-white/90 text-black rounded-lg p-4 sm:p-8 max-w-xs sm:max-w-md mx-auto">
                 <div className="text-center">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                    <span className="text-white text-xl sm:text-2xl">⚡</span>
+                    <span className="text-white text-xl sm:text-2xl">🤖</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-blue-600 mb-2">AI-Powered Automation</h3>
-                  <p className="text-xs sm:text-sm text-gray-600">Experience the future of application interaction</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-blue-600 mb-2">Xbox Gaming AI Assistant</h3>
+                  <p className="text-xs sm:text-sm text-gray-600 mb-3">Get real-time answers about Xbox handheld gaming</p>
+                  <div className="bg-gray-100 rounded-lg p-3 text-left">
+                    <p className="text-xs text-gray-500 mb-1">Try asking:</p>
+                    <p className="text-sm text-gray-700">"What's the price of Xbox handheld?"</p>
+                  </div>
                 </div>
               </div>
             </div>

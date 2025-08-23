@@ -129,9 +129,24 @@ Ask me anything about Xbox handheld gaming!`,
 
   return (
     <>
+      {/* Helpful text near chatbot - only show when closed */}
+      {!isOpen && (
+        <div className="fixed bottom-16 right-4 sm:bottom-20 sm:right-6 z-40 max-w-48 sm:max-w-56">
+          <div className="bg-blue-600 text-white text-xs sm:text-sm px-3 py-2 rounded-lg shadow-lg animate-bounce">
+            <div className="flex items-center space-x-2">
+              <span>👋</span>
+              <span>Hi User, Need Help? Ask me about Xbox handheld gaming!</span>
+            </div>
+            {/* Arrow pointing to chat button */}
+            <div className="absolute -bottom-1 right-6 w-3 h-3 bg-blue-600 transform rotate-45"></div>
+          </div>
+        </div>
+      )}
+
       {/* Chat Icon */}
       <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
         <button
+          data-chatbot-trigger
           onClick={() => setIsOpen(!isOpen)}
           className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-105"
         >
