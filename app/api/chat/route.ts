@@ -14,7 +14,7 @@ interface ChatMessage {
 
 // Initialize OpenAI model
 const model = new ChatOpenAI({
-  model: "gpt-4",
+  model: "gpt-4.1",
   apiKey: process.env.OPENAI_API_KEY,
   temperature: 0.7,
 });
@@ -99,7 +99,7 @@ export async function POST(request: NextRequest) {
       .join('\n');
 
     // Enhanced system prompt for Xbox gaming focus
-    const enhancedMessage = `Xbox handheld gaming question: ${message}`;
+    const enhancedMessage = `ROG Xbox Ally and Xbox Ally X  gaming question: ${message}`;
 
     // Execute the agent with chat history
     const result = await agentExecutor.invoke({
