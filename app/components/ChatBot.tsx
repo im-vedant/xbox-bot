@@ -22,16 +22,27 @@ export default function ChatBot() {
       id: 1,
       text: `# Welcome! 🎮
 
-I'm your **Xbox Handheld Gaming Console** assistant powered by AI. I have comprehensive knowledge about Xbox handheld consoles and can remember our conversation.
+I'm your **Xbox Gaming Assistant** powered by AI. I can help you with everything Xbox-related and can remember our conversation.
 
 ## What I can help with:
-- **Features & Specs** - Hardware details, performance capabilities
-- **Release Information** - Dates, pricing, availability  
-- **Game Compatibility** - What games you can play
-- **Comparisons** - How it stacks against Steam Deck, Nintendo Switch
-- **Xbox Ecosystem** - Game Pass, cloud gaming, backwards compatibility
+- **Xbox Consoles** - Series X/S, Xbox One, specs, and features
+- **Xbox Game Pass** - Games library, pricing, subscription plans
+- **Gaming Services** - Cloud gaming, backwards compatibility
+- **Game Recommendations** - Based on your preferences
+- **Hardware Questions** - Controllers, accessories, compatibility
+- **Release Information** - New games, updates, announcements
+- **Demo Game Pass Codes** - Get a sample code sent to your email! 🎁
+- **Contact our Team** - Share your email and I'll forward your questions/interests
 
-Ask me anything about Xbox handheld gaming!`,
+## Easy Contact System 📧
+Just share your **email** (required) and any details about what you're interested in! I'll forward everything to our Xbox gaming specialists:
+
+*Examples:*
+- "My email is john@example.com, I want info about Xbox Series X pricing"
+- "Contact me at jane@test.com, I need Game Pass recommendations" 
+- "Email: gamer@example.com, phone: 555-0123, interested in Xbox accessories"
+
+Ask me anything about Xbox gaming, or share your email for personalized assistance!`,
       isBot: true,
       timestamp: new Date()
     }
@@ -135,7 +146,7 @@ Ask me anything about Xbox handheld gaming!`,
           <div className="bg-blue-600 text-white text-xs sm:text-sm px-3 py-2 rounded-lg shadow-lg animate-bounce">
             <div className="flex items-center space-x-2">
               <span>👋</span>
-              <span>Hi User, Need Help? Ask me about Xbox handheld gaming!</span>
+              <span>Hi User, Need Help? Ask me about Xbox gaming!</span>
             </div>
             {/* Arrow pointing to chat button */}
             <div className="absolute -bottom-1 right-6 w-3 h-3 bg-blue-600 transform rotate-45"></div>

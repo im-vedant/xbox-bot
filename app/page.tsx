@@ -64,25 +64,25 @@ export default function Home() {
         {/* Hero section */}
         <div className="text-center mb-12 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2">
-            The Agentic Experience for<br />
-            your Application
+            Your Ultimate Xbox Gaming<br />
+            Assistant Experience
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto px-4">
-            Empower users to take action, automate workflows, and drive outcomes on your application - all through natural language commands.
+            Get instant answers about Xbox consoles, games, Game Pass, services, and more. Plus, receive demo Game Pass codes and connect with our team for personalized gaming recommendations - all through natural language commands.
           </p>
           <button className="bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-blue-700 transition-colors">
-            Watch On-Demand Demo →
+            Explore Xbox Gaming →
           </button>
         </div>
 
         {/* Blue section with logo and demo */}
         <div className="bg-blue-600 rounded-2xl sm:rounded-3xl px-6 sm:px-12 py-12 sm:py-16 text-center text-white relative overflow-hidden">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Meet</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Meet Your</h2>
           <div className="flex items-center justify-center space-x-3 mb-8 sm:mb-12">
             <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-blue-600 font-bold text-lg sm:text-xl">⌘</span>
+              <span className="text-blue-600 font-bold text-lg sm:text-xl">🎮</span>
             </div>
-            <span className="text-3xl sm:text-4xl md:text-5xl font-bold">Adopt</span>
+            <span className="text-3xl sm:text-4xl md:text-5xl font-bold">Xbox AI Assistant</span>
           </div>
 
           {/* Demo interface mockup */}
@@ -139,19 +139,23 @@ export default function Home() {
                 <span>🤖</span>
                 <span>Activate Chat Bot</span>
               </button>
-              <div className="text-base sm:text-lg font-medium mb-4 sm:mb-6">Xbox Gaming Assistant</div>
+                            <div className="text-base sm:text-lg font-medium mb-4 sm:mb-6">Xbox Gaming Intelligence Hub</div>
               
               {/* Demo visualization */}
               <div className="bg-white/90 text-black rounded-lg p-4 sm:p-8 max-w-xs sm:max-w-md mx-auto">
                 <div className="text-center">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                    <span className="text-white text-xl sm:text-2xl">🤖</span>
+                    <span className="text-white text-xl sm:text-2xl">🎮</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-blue-600 mb-2">Xbox Gaming AI Assistant</h3>
-                  <p className="text-xs sm:text-sm text-gray-600 mb-3">Get real-time answers about Xbox handheld gaming</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-blue-600 mb-2">Xbox Gaming Expert</h3>
+                  <p className="text-xs sm:text-sm text-gray-600 mb-3">Your AI companion for all things Xbox gaming</p>
                   <div className="bg-gray-100 rounded-lg p-3 text-left">
-                    <p className="text-xs text-gray-500 mb-1">Try asking:</p>
-                    <p className="text-sm text-gray-700">"What's the price of Xbox handheld?"</p>
+                    <p className="text-xs text-gray-500 mb-1">Ask about:</p>
+                    <p className="text-sm text-gray-700">• Console specs & prices</p>
+                    <p className="text-sm text-gray-700">• Game recommendations</p>
+                    <p className="text-sm text-gray-700">• Xbox Game Pass</p>
+                    <p className="text-sm text-gray-700">• Demo Game Pass codes 🎁</p>
+                    <p className="text-sm text-gray-700">• Contact our team</p>
                   </div>
                 </div>
               </div>

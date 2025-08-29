@@ -4,6 +4,7 @@ import { TavilySearchResults } from '@langchain/community/tools/tavily_search';
 import { pull } from 'langchain/hub';
 import { AgentExecutor, createReactAgent} from 'langchain/agents';
 import { TavilySearch } from '@langchain/tavily';
+import { emailTool } from '@/app/api/tools/emailTool'
 
 interface ChatMessage {
   id: number;
@@ -28,7 +29,7 @@ const searchTool = new TavilySearchResults({
 });
 
 // Tools array
-const tools = [searchTool];
+const tools = [searchTool, emailTool];
 
 // Pull the ReAct prompt from LangChain Hub
 let reactPrompt: any;
@@ -99,7 +100,7 @@ export async function POST(request: NextRequest) {
       .join('\n');
 
     // Enhanced system prompt for Xbox gaming focus
-    const enhancedMessage = `ROG Xbox Ally and Xbox Ally X  gaming question: ${message}`;
+    const enhancedMessage = `Xbox gaming question: ${message}`;
 
     // Execute the agent with chat history
     const result = await agentExecutor.invoke({
@@ -137,9 +138,9 @@ export async function POST(request: NextRequest) {
     
     // Fallback response if agent fails
     const fallbackResponses = [
-      "I'm having trouble connecting to my search tools right now. Based on what I know, the Xbox handheld console is expected to feature custom AMD hardware for optimal gaming performance on the go!",
-      "Sorry, I'm experiencing some technical difficulties with my research capabilities. However, the Xbox handheld is rumored to support Xbox Game Pass natively, giving you access to hundreds of games instantly.",
-      "I'm temporarily unable to access my search tools. From leaked information, the device might have excellent battery life, potentially 6-8 hours for most games.",
+      "I'm having trouble connecting to my search tools right now. Based on what I know, Xbox consoles offer incredible gaming experiences with powerful hardware and Game Pass integration!",
+      "Sorry, I'm experiencing some technical difficulties with my research capabilities. However, I can still help with general Xbox questions about consoles, Game Pass, and gaming recommendations.",
+      "I'm temporarily unable to access my search tools. But I'm here to help with Xbox gaming questions! Feel free to ask about consoles, games, or share your contact details for personalized recommendations.",
     ];
     
     const fallbackResponse = fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)];
@@ -154,10 +155,19 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   return NextResponse.json({
-    message: 'Xbox Handheld Gaming Console ReAct Agent API is running',
+    message: 'Xbox Gaming Assistant ReAct Agent API is running',
     status: 'healthy',
     model: 'GPT-4',
-    features: ['ReAct Agent', 'Chat History', 'Tavily Search', 'Xbox Gaming Expertise'],
-    tools: ['TavilySearchResults'],
+    features: ['ReAct Agent', 'Chat History', 'Tavily Search', 'Xbox Gaming Expertise', 'Contact Email System'],
+    tools: ['TavilySearchResults', 'EmailContactTool'],
+    capabilities: [
+      'Xbox Console Information (Series X/S, Xbox One)',
+      'Xbox Game Pass & Gaming Services',
+      'Game Recommendations',
+      'Hardware & Accessories',
+      'Real-time Gaming News & Updates',
+      'Contact Details Collection',
+      'Demo Xbox Game Pass Code Delivery'
+    ]
   });
 }
